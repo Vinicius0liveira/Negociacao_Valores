@@ -1,0 +1,135 @@
+🛒 Negociação de Valores
+
+Este projeto é um sistema simples em Python que simula um controle de clientes com aplicação de descontos conforme a categoria (VIP, Premium ou Comum).
+
+O programa:
+
+Solicita nome, CPF e valor da compra.
+
+Verifica se o cliente já está cadastrado.
+
+Aplica desconto conforme a categoria.
+
+Permite cadastrar novos clientes.
+
+Oferece desconto promocional para clientes comuns que optarem por se cadastrar.
+
+🚀 Funcionalidades
+
+✅ Leitura de dados do cliente via input()
+✅ Limpeza e tratamento do CPF (remoção de pontos e traços)
+✅ Estrutura de dados utilizando dict como base de dados
+✅ Aplicação de regras de negócio com if, elif e else
+✅ Cálculo automático de desconto
+✅ Cadastro dinâmico de novos clientes
+
+📌 Regras de Desconto
+Categoria	Desconto
+VIP	20%
+Premium	10%
+Comum	Sem desconto padrão
+Comum (novo cadastro)	5%
+
+🧠 Lógica do Programa
+
+1️⃣ Entrada de Dados
+
+O programa solicita:
+
+Nome do cliente
+
+CPF
+
+Valor da compra
+
+O CPF é tratado removendo caracteres especiais:
+
+CPF_LIMPO = CPF.replace('.', '').replace('-', '')
+CPF = int(CPF_LIMPO)
+
+2️⃣ Base de Dados
+
+O sistema utiliza um dicionário como banco de dados simulado:
+
+database = {
+    36925814700:{
+        'nome': 'Fernando Oliveira',
+        'Categoria': 'vip'
+    },
+    ...
+}
+
+Cada CPF é a chave do dicionário.
+
+3️⃣ Verificação do Cliente
+
+Se o CPF estiver no database, o sistema:
+
+Exibe mensagem de boas-vindas
+
+Aplica o desconto conforme categoria
+
+Se o CPF não estiver:
+
+Solicita a categoria
+
+Cadastra o cliente
+
+Aplica regras específicas
+
+4️⃣ Cálculo do Desconto
+
+Exemplo para cliente VIP:
+
+Desconto = Valor_da_copmra * 0.20
+Valor_final = Valor_da_copmra - Desconto
+
+O valor final é exibido formatado com duas casas decimais:
+
+print(f'O valor final da compra é: R${Valor_final:.2f}')
+🏗️ Estrutura do Projeto
+📁 sistema-desconto-clientes
+ ├── main.py
+ └── README.md
+▶️ Como Executar
+
+Instale o Python 3.x
+
+Clone o repositório:
+
+git clone https://github.com/seu-usuario/seu-repositorio.git
+
+Execute o arquivo:
+
+python main.py
+📚 Conceitos Utilizados
+
+Dicionários em Python
+
+Estruturas condicionais (if, elif, else)
+
+Manipulação de strings
+
+Conversão de tipos (int, float)
+
+Formatação de strings (f-strings)
+
+Lógica de negócio básica
+
+🔎 Possíveis Melhorias Futuras
+
+Validação real de CPF
+
+Persistência de dados em arquivo ou banco de dados
+
+Tratamento de erros com try/except
+
+Interface gráfica
+
+Separação em funções
+
+Aplicação de princípios de Clean Code
+
+👨‍💻 Vinícius Oliveira .-. 
+
+Projeto desenvolvido para prática de lógica de programação em Python.
